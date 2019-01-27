@@ -1,0 +1,26 @@
+{
+  "name": "FriendFinder",
+  "version": "1.0.0",
+  "description": "Quiz to match compatibility",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jack87/FriendFinder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jack87/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/Jack87/FriendFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  }
+}
