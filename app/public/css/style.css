@@ -1,0 +1,15 @@
+.disagree {
+    margin-left: 15px;
+    margin-right: 5px;
+    padding-left: 5px;
+}
+.agree {
+    margin-left: 5px;
+    margin-right: 5px;
+    /* padding-left: 5px; */
+}
+.q {
+    margin-left: 15px;
+    margin-right: 5px;
+    /* padding-left: 5px; */
+}
