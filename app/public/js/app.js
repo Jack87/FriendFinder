@@ -28,7 +28,7 @@ $(document).ready(function() {
         console.log(data);
         // $("input#submit").hide();
         $(".modal-body").html("<h4>" + data.name + "</h4>");
-        $(".modal-body").append("<img class='imgFriend' src='"+data.photo+"' width='400'>");
+        $(".modal-body").append("<img class='imgFriend' src='"+data.photo+"' width='485'>");
         $(".modal-body").append("<hr><h6>" + data.traits + "</h6>");
         $('#friendModal').modal();
       }); // $.post
