@@ -5,25 +5,31 @@ $(document).ready(function() {
   // When the survey is submitted...
   $("input#submit").on("click", function(e) {
     e.preventDefault();
+    // console.log("test submit");
     // Build array of score
-    // https://stackoverflow.com/a/5552480/3424316
-    var scores = $(".sliderQuestion").map(function() {
+    if ($("#name").val().trim() == "" || $("#photo").val().trim() == "" ) {
+      alert("Please fill in both your name and image URL!");
+      return
+    }
+
+    var scores = $(".rangeSlider").map(function() {
         return this.value;
     }).get();
 
     // Fetch input values
     var newFriend = {
-      "name": $("form#survey #name").val().trim(),
-      "photo": $("form#survey #photo").val().trim(),
+      "name": $("#name").val().trim(),
+      "photo": $("#photo").val().trim(),
       "scores": scores
     };
 
     $.post("/api/new", newFriend)
       .done(function(data) {
         console.log(data);
-        $("input#submit").hide();
+        // $("input#submit").hide();
         $(".modal-body").html("<h4>" + data.name + "</h4>");
-        $(".modal-body").append("<img src='"+data.photo+"'>");
+        $(".modal-body").append("<img class='imgFriend' src='"+data.photo+"' width='400'>");
+        $(".modal-body").append("<hr><h6>" + data.traits + "</h6>");
         $('#friendModal').modal();
       }); // $.post
 

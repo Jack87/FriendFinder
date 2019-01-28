@@ -18,7 +18,7 @@
   <div class="container">
     <div class="jumbotron">
       <h1><i class="fas fa-user-friends"></i> FriendFinder</h1>
-      <h4>Find the the turtle you best match!</h4>
+      <h4><i class="fas fa-turtle"></i> Find the the turtle you best match!</h4>
     </div>
 
     <div class="row intro">
@@ -28,27 +28,41 @@
       </div>
     </div>
 
-    <form id="survey">
+    <form class="needs-validation" novalidate id="survey">
 
-      <h3>Basic Info</h3>
+      <h3><i class="fas fa-info-circle"></i> Basic Info</h3>
 
-      <div class="question form-group row">
-        <label for="name" class="col-2 col-form-label">Name</label>
+    <div class="question form-group row">
+        <label for="name" class="col-2 col-form-label">*Your Name:</label>
         <div class="col-5">
-          <input class="form-control" type="text" placeholder="Your Name" id="name">
+            <input class="form-control" type="text" placeholder="Your Name" id="name" require>
+            <div class="valid-tooltip">
+                Looks good!
+            </div>
+            <div class="invalid-tooltip">
+                Please enter your name.
+            </div>
         </div>
-      </div>
+    </div>
       <!-- question -->
 
       <div class="question form-group row">
-        <label for="photo" class="col-2 col-form-label">Your Photo URL</label>
+            <label for="photo" class="col-2 col-form-label">*URL to Your Photo:</label>
         <div class="col-5">
-          <input class="form-control" type="text" placeholder="http://imgr.com/image.jpg" id="photo">
+            <input class="form-control" type="text" placeholder="http://imgr.com/image.jpg" id="photo" require>
+            <div class="valid-tooltip">
+                Looks good!
+            </div>
+            <div class="invalid-tooltip">
+                Please enter a URL pointing to photo of yourself.
+            </div>
         </div>
       </div>
+      <p>*Are required fields.</p>
       <!-- question -->
 
-      <h3>The Questions</h3>
+      <hr>
+      <h3><i class="fas fa-question-circle"></i> The Questions</h3>
 
       <div class="row">
         <div class="col-7">
@@ -57,7 +71,7 @@
                 <label class="q" for="q1">I prefer just cheese pizza.</label>
                 <div class="range-group row">
                     <div class="col-sm-auto badge badge-pill badge-danger disagree">Strongly Disagree</div>
-                    <input class="col-sm-auto" type="range" id="q1" min="1" value="3" max="5" step="1">
+                    <input class="col-sm-auto rangeSlider" type="range" id="q1" min="1" value="3" max="5" step="1">
                     <div class="col-sm-auto badge badge-pill badge-success agree">Strongly Agree</div>
                 </div>
             </div> <!-- question -->
@@ -68,7 +82,7 @@
                 <label class="q" for="q2">I fall asleep on the couch a lot.</label>
                 <div class="range-group row ">
                     <div class="col-sm-auto badge badge-pill badge-danger disagree">Strongly Disagree</div>
-                    <input class="col-sm-auto" type="range" id="q2" min="1" value="3" max="5" step="1">
+                    <input class="col-sm-auto rangeSlider" type="range" id="q2" min="1" value="3" max="5" step="1">
                     <div class="col-sm-auto badge badge-pill badge-success agree">Strongly Agree</div>
                 </div>
             </div> <!-- question -->
@@ -79,7 +93,7 @@
                 <label class="q" for="q3">Being able to build with Legos makes you an engineer.</label>
                 <div class="range-group row ">
                     <div class="col-sm-auto badge badge-pill badge-danger disagree">Strongly Disagree</div>
-                    <input class="col-sm-auto" type="range" id="q3" min="1" value="3" max="5" step="1">
+                    <input class="col-sm-auto rangeSlider" type="range" id="q3" min="1" value="3" max="5" step="1">
                     <div class="col-sm-auto badge badge-pill badge-success agree">Strongly Agree</div>
                 </div>
             </div> <!-- question -->
@@ -90,7 +104,7 @@
                 <label class="q" for="q4">My friends would describe me as a Jokester.</label>
                 <div class="range-group row ">
                     <div class="col-sm-auto badge badge-pill badge-danger disagree">Strongly Disagree</div>
-                    <input class="col-sm-auto" type="range" id="q4" min="1" value="3" max="5" step="1">
+                    <input class="col-sm-auto rangeSlider" type="range" id="q4" min="1" value="3" max="5" step="1">
                     <div class="col-sm-auto badge badge-pill badge-success agree">Strongly Agree</div>
                 </div>
             </div> <!-- question -->
@@ -101,7 +115,7 @@
                 <label class="q" for="q5">I try to use 'Cowabunga' in my everyday speech whenever I can fit it in.</label>
                 <div class="range-group row ">
                     <div class="col-sm-auto badge badge-pill badge-danger disagree">Strongly Disagree</div>
-                    <input class="col-sm-auto" type="range" id="q5" min="1" value="3" max="5" step="1">
+                    <input class="col-sm-auto rangeSlider" type="range" id="q5" min="1" value="3" max="5" step="1">
                     <div class="col-sm-auto badge badge-pill badge-success agree">Strongly Agree</div>
                 </div>
             </div> <!-- question -->
@@ -112,7 +126,7 @@
                 <label class="q" for="q6">WHAM! is my favorite comic book sound.</label>
                 <div class="range-group row ">
                     <div class="col-sm-auto badge badge-pill badge-danger disagree">Strongly Disagree</div>
-                    <input class="col-sm-auto" type="range" id="q6" min="1" value="3" max="5" step="1">
+                    <input class="col-sm-auto rangeSlider" type="range" id="q6" min="1" value="3" max="5" step="1">
                     <div class="col-sm-auto badge badge-pill badge-success agree">Strongly Agree</div>
                 </div>
             </div> <!-- question -->
@@ -123,7 +137,7 @@
                 <label class="q" for="q7">If Shreddar stole my last piece of pizza I would kick his ass..</label>
                 <div class="range-group row ">
                     <div class="col-sm-auto badge badge-pill badge-danger disagree">Strongly Disagree</div>
-                    <input class="col-sm-auto" type="range" id="q7" min="1" value="3" max="5" step="1">
+                    <input class="col-sm-auto rangeSlider" type="range" id="q7" min="1" value="3" max="5" step="1">
                     <div class="col-sm-auto badge badge-pill badge-success agree">Strongly Agree</div>
                 </div>
             </div> <!-- question -->
@@ -134,7 +148,7 @@
                 <label class="q" for="q8">Drinking can be a pastime activity.</label>
                 <div class="range-group row ">
                     <div class="col-sm-auto badge badge-pill badge-danger disagree">Strongly Disagree</div>
-                    <input class="col-sm-auto" type="range" id="q8" min="1" value="3" max="5" step="1">
+                    <input class="col-sm-auto rangeSlider" type="range" id="q8" min="1" value="3" max="5" step="1">
                     <div class="col-sm-auto badge badge-pill badge-success agree">Strongly Agree</div>
                 </div>
             </div> <!-- question -->
@@ -145,7 +159,7 @@
                 <label class="q" for="q9">Knowledge is Power.</label>
                 <div class="range-group row ">
                     <div class="col-sm-auto badge badge-pill badge-danger disagree">Strongly Disagree</div>
-                    <input class="col-sm-auto" type="range" id="q9" min="1" value="3" max="5" step="1">
+                    <input class="col-sm-auto rangeSlider" type="range" id="q9" min="1" value="3" max="5" step="1">
                     <div class="col-sm-auto badge badge-pill badge-success agree">Strongly Agree</div>
                 </div>
             </div> <!-- question -->
@@ -156,7 +170,7 @@
                 <label class="q" for="q10">It is important to have a strategy in mind before tackling a challenge.</label>
                 <div class="range-group row ">
                     <div class="col-sm-auto badge badge-pill badge-danger disagree">Strongly Disagree</div>
-                    <input class="col-sm-auto" type="range" id="q10" min="1" value="3" max="5" step="1">
+                    <input class="col-sm-auto rangeSlider" type="range" id="q10" min="1" value="3" max="5" step="1">
                     <div class="col-sm-auto badge badge-pill badge-success agree">Strongly Agree</div>
                 </div>
             </div> <!-- question -->
@@ -172,12 +186,12 @@
 
     </form>
 
-    <!-- Modal containing matched friend -->
-    <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Modal containing match -->
+    <div class="modal fade justify-content-md-center" id="friendModal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modalTitle">Your new friend is...</h5>
+            <h5 class="modal-title" id="modalTitle">The turtle that best matches you is...</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -186,6 +200,7 @@
             
           </div>
           <div class="modal-footer">
+            <a href="https://www.facebook.com/FreiArtStudio/" target="_blank">Turtle images by Frie Art</a>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -194,6 +209,15 @@
 
   </div> <!-- container -->
 
+    <div class="container">
+        <hr>
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends" target="_blank">API Friends List</a> | <a href="https://github.com/Jack87/FriendFinder" target="_blank">GitHub Repo</a> | <a href="https://www.facebook.com/FreiArtStudio/" target="_blank">Turtle images by Frie Art</a></p>
+            </div>
+        </footer>
+    </div>
+    
   <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
